@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de edad</title>
+  <link rel="stylesheet" href="node_modules/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Calculadora de edad</h1>
+    <p class="subtitulo">Elige tu fecha de nacimiento y te digo tu edad exacta.</p>
+
+    <form id="formulario" novalidate>
+      <label for="fecha">Fecha de nacimiento</label>
+      <!-- type="text": el calendario lo dibuja Flatpickr, no el navegador -->
+      <input type="text" id="fecha" placeholder="dd/mm/aaaa" autocomplete="off">
+      <p id="error" class="error" role="alert"></p>
+      <button type="submit">Calcular edad</button>
+    </form>
+
+    <section id="resultado" class="resultado" hidden>
+      <p class="etiqueta">Tu edad es</p>
+      <p id="edad" class="edad"></p>
+      <p id="detalle" class="detalle"></p>
+    </section>
+  </main>
+
+  <script src="node_modules/flatpickr/dist/flatpickr.min.js"></script>
+  <script src="node_modules/flatpickr/dist/l10n/es.js"></script>
+  <script src="node_modules/luxon/build/global/luxon.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
